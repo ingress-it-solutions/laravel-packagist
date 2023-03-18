@@ -1,0 +1,48 @@
+{
+  "name": "ingress-it-solutions/laravel-packagist",
+  "description": "A Laravel wrapper for the `spatie/packagist-api` package.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ingress Team",
+      "email": "hello@ingressit.com",
+      "homepage": "https://www.ingressit.com",
+      "role": "Owner"
+    }
+  ],
+  "require": {
+    "php": "8.*",
+    "ext-json": "*",
+    "laravel/framework": "8.*|^9.0|^10.0",
+    "phpoption/phpoption": ">=1.8",
+    "spatie/packagist-api": "^2.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~9.3",
+    "orchestra/testbench": "~6.22|7.*|8.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "IngressITSolutions\\Packagist\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "IngressITSolutions\\Packagist\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "IngressITSolutions\\Packagist\\PackagistServiceProvider"
+      ],
+      "aliases": {
+        "Packagist": "IngressITSolutions\\Packagist\\Facades\\Packagist"
+      }
+    }
+  }
+}
